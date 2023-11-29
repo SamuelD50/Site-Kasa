@@ -1,5 +1,5 @@
 import './Navbar.scss'
-import logotypeHeader from '../../assets/Logotype__header.png'
+import header__logotype from '../../assets/Logotype__header.png'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -21,10 +21,10 @@ function Navbar() {
     return (
         <NavContainer>
             <Link to="/">
-                <HomeLogo src={logotypeHeader} className='navbar__logotype' alt='Logotype Kasa'/>
+                <HomeLogo src={header__logotype} className='navbar__logotype' alt='Logotype Kasa'/>
             </Link>
             <nav>
-                <ul>
+                <ul className='navbar__list'>
                     <li>
                         <Link to='/'>
                             Accueil
