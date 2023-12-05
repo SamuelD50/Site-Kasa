@@ -7,7 +7,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "babel-plugin-macros": "^3.1.0",
+<<<<<<< HEAD
     "json-server": "^0.17.4",
+=======
+>>>>>>> 56f6a193487b782b2a5a32b0e37942cf27211c7a
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
@@ -17,11 +20,18 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+<<<<<<< HEAD
     "start": "concurrently \"json-server --watch src/db.json --port 8000\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start-server": "json-server --watch src/db.json"
+=======
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+>>>>>>> 56f6a193487b782b2a5a32b0e37942cf27211c7a
   },
   "eslintConfig": {
     "extends": [
@@ -40,8 +50,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
+=======
+>>>>>>> 56f6a193487b782b2a5a32b0e37942cf27211c7a
   }
 }
