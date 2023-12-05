@@ -1,5 +1,4 @@
 import chevronUpAndDown from '../../assets/chevron-up-and-down.svg'
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import './Collapse.scss'
 
@@ -49,16 +48,3 @@ function Collapse({collapseTitle, collapseContent}) {
   }; */
 
 export default Collapse
-=======
-import 'Collapse.scss'
-
-function Collapse() {
-    const [isOpen, setIsOpen] = useState(false)
-
-    return isOpen ? (
-        <button onClick={() => setIsOpen(false)}>Fermer</button>
-    ) : (
-        <button onClick={() => setIsOpen(true)}>Ouvrir</button>
-    )
-}
->>>>>>> 56f6a193487b782b2a5a32b0e37942cf27211c7a
