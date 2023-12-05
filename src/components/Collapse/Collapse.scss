@@ -1,0 +1,25 @@
+li {
+    list-style-type: none;
+}
+
+.collapse__heading {
+    background-color: #FF6060;
+    border-radius: 5px;
+    padding: 10px 20px 10px 15px;
+    width: 1025px;
+    height: 52px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapse__title {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.collapse__hiddenContent {
+    display: none;
+}
