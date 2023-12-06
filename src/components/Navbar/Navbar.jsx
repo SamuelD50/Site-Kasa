@@ -2,6 +2,7 @@ import './Navbar.scss'
 import header__logotype from '../../assets/Logotype__header.png'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Loading from '../Loading/Loading';
 
 
 const HomeLogo = styled.img`
@@ -23,6 +24,7 @@ function Navbar() {
             <Link to="/">
                 <HomeLogo src={header__logotype} className='navbar__logotype' alt='Logotype Kasa'/>
             </Link>
+            <Loading/>
             <nav>
                 <ul className='navbar__list'>
                     <li>

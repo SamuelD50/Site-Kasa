@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer'
 import bannerImage from '../../assets/banner-sea.png'
 import { useFetch } from '../../utils/useFetch'
 import './Home.scss'
+import Loading from '../../components/Loading/Loading'
 
 function Home() {
     const { data, isLoading, error } = useFetch(
@@ -19,16 +20,23 @@ function Home() {
                 <Navbar/>
             </header>
             <main>
-                <Banner image={bannerImage} title={title}/>
-                <ul className='gallery'>
-                    {data?.map((hostings) => (
-                        <Card
-                            id={hostings.id}
-                            cover={hostings.cover}
-                            cardTitle={hostings.title}
-                        />    
-                    ))}                    
-                </ul>
+                <Banner 
+                    image={bannerImage}
+                    title={title}
+                />
+                {isLoading ? (
+                    <Loading/>
+                ) : (
+                    <ul className='gallery'>
+                        {data?.map((hostings) => (
+                            <Card
+                                id={hostings.id}
+                                cover={hostings.cover}
+                                cardTitle={hostings.title}
+                            />    
+                        ))}                    
+                    </ul>
+                )}
             </main>
             <footer>
                 <Footer/>

@@ -1,7 +1,6 @@
 import './Card.scss'
 import { Link } from 'react-router-dom'
 
-
 function Card({ id, cover, cardTitle }) {
 
     const handleClick = (hostingsId) => {

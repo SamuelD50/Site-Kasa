@@ -6,6 +6,7 @@ import Rating from '../../components/Rating/Rating'
 import { useFetch } from '../../utils/useFetch'
 import { useParams } from 'react-router-dom'
 import './Hosting.scss'
+import Collapse from '../../components/Collapse/Collapse'
 
 function Hosting() {
 
@@ -37,7 +38,17 @@ function Hosting() {
                         description={hostings.description}
                         equipments={hostings.equipments}
                         />
-                    <Rating />
+                    <Rating 
+                        rating={hostings.rating}
+                        />
+                    <Collapse
+                        collapseTitle={"Description"}
+                        collapseContent={hostings.description}
+                    />
+                    <Collapse
+                        collapseTitle={"Equipements"}
+                        collapseContent={hostings.equipments}
+                    />
                 </main>
             ) : (
                 <p>

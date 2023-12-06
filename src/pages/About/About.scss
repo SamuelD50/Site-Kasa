@@ -2,3 +2,23 @@ header,
 main {
     margin: 0 100px 0 100px;
 }
+
+.collapse__global {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.collapse__heading {
+    width: 80%;
+}
+
+.collapse__hiddenContent {
+    width: 80%;
+}
+
+footer {
+    bottom: 0px;
+}

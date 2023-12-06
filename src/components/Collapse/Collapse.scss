@@ -1,3 +1,4 @@
+
 li {
     list-style-type: none;
 }
@@ -6,8 +7,6 @@ li {
     background-color: #FF6060;
     border-radius: 5px;
     padding: 10px 20px 10px 15px;
-    width: 1025px;
-    height: 52px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,6 +19,22 @@ li {
     font-size: 24px;
 }
 
+.collapse__chevronUpAndDown:active {
+    transition : transform 0.3s ease;
+    transform: rotate(-180deg)
+}
+
 .collapse__hiddenContent {
-    display: none;
+    background-color: #f6f6f6;
+    padding: 18px;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.collapse__content {
+    color: #FF6060;
+    justify-content: center;
+    align-items: center;
+
 }

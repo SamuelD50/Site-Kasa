@@ -1,17 +1,13 @@
 import React from 'react';
 import redStar from '../../assets/red-star.svg';
 import greyStar from '../../assets/grey-star.svg';
-import datas from '../../datas/datas.json';
-import { useParams } from 'react-router-dom';
 import './Rating.scss';
 
 
-function Rating() {
+function Rating({rating}) {
 
-    const { id } = useParams();
-    const hostings = datas.find((hostings) => hostings.id === id)
-
-    const ratingScore = hostings.rating;
+    const ratingScore = parseInt(rating);
+    console.log(ratingScore)
     const totalRating = 5;
     const unratingScore = totalRating - ratingScore;
     console.log(unratingScore)

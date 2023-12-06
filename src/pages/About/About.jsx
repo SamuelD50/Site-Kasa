@@ -2,6 +2,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Banner from '../../components/Banner/Banner'
 import Collapse from '../../components/Collapse/Collapse'
 import Footer from '../../components/Footer/Footer'
+import Loading from '../../components/Loading/Loading'
 import bannerImage from '../../assets/banner-mountain.png'
 import './About.scss'
 
@@ -23,26 +24,28 @@ function About() {
             <header>
                 <Navbar/>
             </header>
-            <main>
+            <main> className='about__main'
                 <Banner
                     image={bannerImage}
                 />
-                <Collapse 
-                    collapseTitle={reliabilityTitle}
-                    collapseContent={reliabilityContent}
-                />
-                <Collapse
-                    collapseTitle={respectTitle}
-                    collapseContent={respectContent}
-                />
-                <Collapse
-                    collapseTitle={serviceTitle}
-                    collapseContent={serviceContent}
-                />
-                <Collapse
-                    collapseTitle={securityTitle}
-                    collapseContent={securityContent}
-                />
+                <div className='collapse__globale'>
+                    <Collapse 
+                        collapseTitle={reliabilityTitle}
+                        collapseContent={reliabilityContent}
+                    />
+                    <Collapse
+                        collapseTitle={respectTitle}
+                        collapseContent={respectContent}
+                    />
+                    <Collapse
+                        collapseTitle={serviceTitle}
+                        collapseContent={serviceContent}
+                    />
+                    <Collapse
+                        collapseTitle={securityTitle}
+                        collapseContent={securityContent}
+                    />
+                </div>
             </main>
             <footer>
                 <Footer/>
