@@ -6,16 +6,30 @@ import bannerImage from '../../assets/banner-sea.png'
 import { useFetch } from '../../utils/useFetch'
 import './Home.scss'
 import Loading from '../../components/Loading/Loading'
+import { useNavigate } from 'react-router-dom' 
 
 function Home() {
     const { data, isLoading, error } = useFetch(
         `http://localhost:8000/hostingsList`
     )
 
+    const navigate = useNavigate()
+    
+
+/*     const checkIdValidity = (id) => {
+        const hostings = data.find((hostings) => hostings.id === id)
+
+        if (!hostings) {
+            navigate('/*')
+        } else {
+            navigate('/hosting/${id}')
+        }
+    } */
+
     const title = "Chez vous, partout et ailleurs"
 
     return (
-        <body>
+        <div className='home'>
             <header>
                 <Navbar/>
             </header>
@@ -30,9 +44,11 @@ function Home() {
                     <ul className='gallery'>
                         {data?.map((hostings) => (
                             <Card
+                                key={hostings.id}
                                 id={hostings.id}
                                 cover={hostings.cover}
                                 cardTitle={hostings.title}
+                                /* onClick={checkIdValidity(hostings.id)} */
                             />    
                         ))}                    
                     </ul>
@@ -41,7 +57,7 @@ function Home() {
             <footer>
                 <Footer/>
             </footer>
-        </body>
+        </div>
     )
 }
 

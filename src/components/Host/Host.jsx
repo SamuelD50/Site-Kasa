@@ -1,6 +1,6 @@
 import './Host.scss'
 
-function Host({cardTitle, location, tags, hostName, hostPicture, description, equipments}) {
+function Host({id, cardTitle, location, hostName, hostPicture}) {
 
 
 
@@ -14,13 +14,6 @@ function Host({cardTitle, location, tags, hostName, hostPicture, description, eq
                     {location}
                 </span>
             </div>
-            <div className='host__tagsGroup'>
-                <ul>
-                    <li>
-                        {tags}
-                    </li>
-                </ul>
-            </div>
             <div className='host__host'>
                 <h2 className='host__name'>
                     {hostName}
@@ -30,7 +23,5 @@ function Host({cardTitle, location, tags, hostName, hostPicture, description, eq
         </div>
     )
 }
-
-
 
 export default Host;

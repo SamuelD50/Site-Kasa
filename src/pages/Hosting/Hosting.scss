@@ -6,3 +6,11 @@ main {
 .collapse__heading {
     width: 50%;
 }
+
+.tags__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}

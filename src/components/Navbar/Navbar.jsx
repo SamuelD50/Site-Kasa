@@ -1,8 +1,7 @@
 import './Navbar.scss'
-import header__logotype from '../../assets/Logotype__header.png'
-import { Link } from 'react-router-dom';
+import headerLogotype from '../../assets/header-logotype.png'
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import Loading from '../Loading/Loading';
 
 
 const HomeLogo = styled.img`
@@ -21,21 +20,20 @@ const NavContainer = styled.nav`
 function Navbar() {
     return (
         <NavContainer>
-            <Link to="/">
-                <HomeLogo src={header__logotype} className='navbar__logotype' alt='Logotype Kasa'/>
-            </Link>
-            <Loading/>
+            <NavLink to="/">
+                <HomeLogo src={headerLogotype} className='navbar__logotype' alt='Logotype Kasa'/>
+            </NavLink>
             <nav>
                 <ul className='navbar__list'>
                     <li>
-                        <Link to='/'>
+                        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/'>
                             Accueil
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to='/about'>
+                        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/about'>
                             A propos
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

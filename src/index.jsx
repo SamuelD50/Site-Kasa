@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './index.scss'
 import Home from '../src/pages/Home/Home'
 import Hosting from './pages/Hosting/Hosting'
@@ -12,10 +12,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/hosting/:id" element={<Hosting />} />
-         <Route path="/about" element={<About />} />
-        <Route path="/*" element={<Error />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/hosting/:id' element={<Hosting />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/*' element={<Error />} />
       </Routes>
     </Router>
   </React.StrictMode>,

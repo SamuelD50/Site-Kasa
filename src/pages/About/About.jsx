@@ -2,7 +2,6 @@ import Navbar from '../../components/Navbar/Navbar'
 import Banner from '../../components/Banner/Banner'
 import Collapse from '../../components/Collapse/Collapse'
 import Footer from '../../components/Footer/Footer'
-import Loading from '../../components/Loading/Loading'
 import bannerImage from '../../assets/banner-mountain.png'
 import './About.scss'
 
@@ -20,11 +19,11 @@ const securityContent = "La sécurité est la priorité de Kasa. Aussi bien pour
 
 function About() {
     return (
-        <body>
+        <div className='about'>
             <header>
                 <Navbar/>
             </header>
-            <main> className='about__main'
+            <main className='about__main'> 
                 <Banner
                     image={bannerImage}
                 />
@@ -51,7 +50,7 @@ function About() {
                 <Footer/>
             </footer>
 
-        </body>
+        </div>
     )
 }
 

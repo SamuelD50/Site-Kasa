@@ -1,12 +1,27 @@
-.banner {
+ .banner {
     position: relative;
+    width: 100%;
+    height: 224px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        border-radius: 25px;
+    }
 
     &__image {
         border-radius: 25px;
         width: 100%;
-        height: 223px;
+        height: 100%;
         object-fit: cover;
-        display: block;
+        position: relative;
+        z-index: 0;
     }
 
     &__title {
@@ -14,9 +29,14 @@
         font-size: 48px;
         color: #FFFFFF;
         position: absolute;
-        bottom: 40%;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, 50%);
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        z-index: 2;
     }
     
 }
+
