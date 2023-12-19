@@ -1,25 +1,32 @@
-header,
-main {
-    margin: 0 100px 0 100px;
+.about {
+    &__header,
+    &__main {
+        margin: 40px 100px 40px 100px;
+    }
+
+    &__main {
+        .collapse {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+
+            &__heading {
+                width: 80%;
+                height: 52px;
+                border-radius: 5px;
+                padding: 10px 20px 10px 15px;
+            }
+
+            &__hiddenContent {
+                width: 80%;
+                border-radius: 0 0 5px 5px;
+            }
+        }
+        
+    }
 }
 
-.collapse__global {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 30px;
-}
 
-.collapse__heading {
-    width: 80%;
-    height: 52px;
-}
 
-.collapse__hiddenContent {
-    width: 80%;
-}
-
-footer {
-    bottom: 0px;
-}

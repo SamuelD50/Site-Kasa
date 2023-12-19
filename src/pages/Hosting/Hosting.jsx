@@ -6,88 +6,97 @@ import Rating from '../../components/Rating/Rating'
 import Tags from '../../components/Tags/Tags'
 import Loading from '../../components/Loading/Loading'
 import Collapse from '../../components/Collapse/Collapse'
-import { useFetch } from '../../utils/useFetch'
 import { useParams, useNavigate } from 'react-router-dom'
 import './Hosting.scss'
-import { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
+/* This file builds the hosting page with React components.  */
 
 function Hosting() {
 
     const { id } = useParams()
     const navigate = useNavigate()
+    const [ data, setData ] = useState(null)
+    const [ loading, setLoading ] = useState(true)
 
-    const { data, isLoading, error } = useFetch(
-        `http://localhost:8000/hostingsList`
-    )
+    useEffect(() => {
+        fetch(`http://localhost:8000/hostingsList`)
+            .then((res) => res.json())
+            .then((response) => {
+                setData(response)
+            })
+            .catch((error) => {
+                console.log('Il y a un problème avec fetch', error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [])
 
-    if (error) {
-        return (
-            <span>
-                Il y a un problème avec useFetch!
-            </span>
-        )
+    if (loading) {
+        return <Loading />
     }
-    
-/*     useEffect(() => {
-        const isIdValid = data.map((hosting) => hosting.id === id)
 
-        if (!isIdValid) {
-            navigate(`/*`)
-        }
-    }, [data, id, navigate]) */
-    
-    const hostings = data.find((hostings) => hostings.id === id)
+    const hostings = data.find((hosting) => hosting.id === id)
+
+    if (!hostings) {
+        navigate('/404')
+        return null
+    }
 
     return (
-        <div className='hostings'>
-            <header>
+        <div className='hosting'>
+            <header className='hosting__header'>
                 <Navbar/>
             </header>
-            {isLoading ? (
-                <Loading />
-            ) : (
-                <main className='hosting__main'>
-                    <Gallery
-                        pictures={hostings.pictures}
-                        description={hostings.description}
-                    />
-                    <Host
-                        cardTitle={hostings.title}
-                        location={hostings.location}
-                        hostName={hostings.host.name}
-                        hostPicture={hostings.host.picture}
-                        description={hostings.description}
-                        equipments={hostings.equipments}
+            <main className='hosting__main'>
+                {loading ? (
+                    <Loading />
+                ) : (
+                    <div className='hosting__content'>
+                        <Gallery
+                            pictures={hostings.pictures}
+                            description={hostings.description}
                         />
-                    <Rating 
-                        rating={hostings.rating}
-                        id={hostings.id}
-                    />
-                    <Tags
-                        id={hostings.id}
-                        tagsKeyword={hostings.tags.map((tag, index) => (
-                            <li key={index} className='tags'>
-                                {tag}
-                            </li>
-                        ))}
-                    />
-                    <Collapse
-                        collapseTitle={"Description"}
-                        collapseContent={hostings.description}
-                    />
-                    <Collapse
-                        collapseTitle={"Equipements"}
-                        collapseContent={
-                            hostings.equipments.map((equipment, id) => (
-                            <li key={id}>
-                                {equipment}
-                            </li>
-                        ))}
-                    />
-                </main>
-            )}
-            <footer>
+                        <Host
+                            cardTitle={hostings.title}
+                            location={hostings.location}
+                            hostFirstName={hostings.host.name.split(' ')[0]}
+                            hostLastName={hostings.host.name.split(' ')[1]}
+                            hostPicture={hostings.host.picture}
+                        />
+                        <div className='hosting__tagsAndRating'>
+                            <Tags
+                                tagsKeyword={hostings.tags.map((tag, id) => (
+                                    <li key={id} className='hosting__tags'>
+                                        {tag}
+                                    </li>
+                                ))}
+                            />
+                            <Rating 
+                                rating={hostings.rating}
+                            />
+                        </div>
+                        <div className='hosting__collapses'>
+                            <Collapse
+                                collapseTitle={"Description"}
+                                collapseContent={hostings.description}
+                            />
+                            <Collapse
+                                collapseTitle={"Equipements"}
+                                collapseContent={
+                                    hostings.equipments.map((equipment, id) => (
+                                        <li key={id}>
+                                            {equipment}
+                                        </li>
+                                    ))
+                                }
+                            />
+                        </div>
+                    </div>
+                )}
+            </main>
+            <footer className='hosting__footer'>
                 <Footer/>
             </footer>
         </div>

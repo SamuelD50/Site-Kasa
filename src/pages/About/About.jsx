@@ -17,36 +17,36 @@ const serviceContent = "La bienveillance fait partie des valeurs fondatrices de 
 const securityTitle = "Sécurité"
 const securityContent = "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien pour l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
 
+/* This file builds the about page with React components */
+
 function About() {
     return (
         <div className='about'>
-            <header>
+            <header className='about__header'>
                 <Navbar/>
             </header>
             <main className='about__main'> 
                 <Banner
                     image={bannerImage}
                 />
-                <div className='collapse__globale'>
-                    <Collapse 
-                        collapseTitle={reliabilityTitle}
-                        collapseContent={reliabilityContent}
-                    />
-                    <Collapse
-                        collapseTitle={respectTitle}
-                        collapseContent={respectContent}
-                    />
-                    <Collapse
-                        collapseTitle={serviceTitle}
-                        collapseContent={serviceContent}
-                    />
-                    <Collapse
-                        collapseTitle={securityTitle}
-                        collapseContent={securityContent}
-                    />
-                </div>
+                <Collapse 
+                    collapseTitle={reliabilityTitle}
+                    collapseContent={reliabilityContent}
+                />
+                <Collapse
+                    collapseTitle={respectTitle}
+                    collapseContent={respectContent}
+                />
+                <Collapse
+                    collapseTitle={serviceTitle}
+                    collapseContent={serviceContent}
+                />
+                <Collapse
+                    collapseTitle={securityTitle}
+                    collapseContent={securityContent}
+                />
             </main>
-            <footer>
+            <footer className='about__footer'>
                 <Footer/>
             </footer>
 

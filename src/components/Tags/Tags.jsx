@@ -1,9 +1,11 @@
 import './Tags.scss';
 
-function Tags({ tagsKeyword, id }) {
+/* This component is used to create a list of keywords/tags in hosting page which is running with Hosting.jsx */
+
+function Tags({ tagsKeyword }) {
 
     return (
-        <ul key={id} className='tags__container'>            
+        <ul className='tags__list'>            
             {tagsKeyword}          
         </ul>
     )

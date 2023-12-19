@@ -1,8 +1,16 @@
 .error404 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #FF6060;
+
+    &__header {
+        margin: 40px 100px 40px 100px;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #FF6060;
+        margin: 50px 100px 40px 100px;
+    }
 
     &__title {
         font-size: 290px;
@@ -12,6 +20,7 @@
 
     &__info {
         font-size: 36px;
+        font-weight: 500;
     }
 
     &__link {

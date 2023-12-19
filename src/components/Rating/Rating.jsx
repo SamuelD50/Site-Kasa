@@ -3,8 +3,9 @@ import redStar from '../../assets/red-star.svg';
 import greyStar from '../../assets/grey-star.svg';
 import './Rating.scss';
 
+/* This component is used to create the rating by stars in hosting page */
 
-function Rating({ rating, id }) {
+function Rating({ rating }) {
 
     const ratingScore = parseInt(rating);
     const totalRating = 5;
@@ -13,7 +14,7 @@ function Rating({ rating, id }) {
     const ratingStars = [];
     for (let i = 0; i < ratingScore; i++) {
         ratingStars.push(
-            <li key={id} className='rating-star'>
+            <li key={i} className='rating__star'>
                 <img src={redStar} alt={ratingScore}/>
             </li>
         )
@@ -22,7 +23,7 @@ function Rating({ rating, id }) {
     const unratingStars = [];
     for (let i = 0; i < unratingScore; i++) {
         unratingStars.push(
-            <li key={id} className='unrating-star'>
+            <li key={i} className='unrating__star'>
                 <img src={greyStar} alt={unratingScore}/>
             </li>
         )

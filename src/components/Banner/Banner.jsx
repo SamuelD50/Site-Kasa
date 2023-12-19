@@ -1,5 +1,7 @@
 import './Banner.scss'
 
+/* This component is used to create banners in home and about pages */
+
 function Banner ({image, title}) {
     return (
         <div className='banner'>

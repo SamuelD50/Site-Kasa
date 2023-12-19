@@ -1,17 +1,26 @@
-header,
-main {
-    margin: 0px 100px 0px 100px;
-}
+.home {
+    &__header,
+    &__main {
+        margin: 40px 100px 40px 100px;
+    }
 
-.gallery {
-    background-color: #f6f6f6;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    flex-wrap: wrap;
-    padding: 50px;
-    margin: 0;
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__list {
+        background-color: #f6f6f6;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 50px;
+        flex-wrap: wrap;
+        padding: 50px;
+        margin: 0;
+    }
 }
 
 .loader {

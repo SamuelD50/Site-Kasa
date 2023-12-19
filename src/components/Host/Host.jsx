@@ -1,24 +1,29 @@
 import './Host.scss'
 
-function Host({id, cardTitle, location, hostName, hostPicture}) {
+/* This component is used to create the bloc with title, location, host name and host picture in hosting page */
 
-
+function Host({id, cardTitle, location, hostFirstName, hostLastName, hostPicture}) {
 
     return (
-        <div className='host__global'>
+        <div className='host'>
             <div className='host__titleGroup'>
                 <h1 className='host__title'>
                     {cardTitle}
                 </h1>
-                <span className='host__location'>
+                <h2 className='host__location'>
                     {location}
-                </span>
+                </h2>
             </div>
             <div className='host__host'>
-                <h2 className='host__name'>
-                    {hostName}
-                </h2>
-                <img src={hostPicture} className='host__picture' alt={hostName} />
+                <div className='host__name'>
+                    <h2 className='host__firstName'>
+                        {hostFirstName}
+                    </h2>
+                    <h2 className='host__lastName'>
+                        {hostLastName}
+                    </h2>
+                </div>
+                <img src={hostPicture} className='host__picture' alt={`${hostFirstName} ${hostLastName}`} />
             </div>
         </div>
     )

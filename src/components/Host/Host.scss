@@ -1,8 +1,57 @@
-.host__title {
-    font-size: 50px;
-    color: black;
-}
+.host {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-.host__titleGroup {
-    padding: 30px;
+    &__titleGroup {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    &__title {
+        font-size: 36px;
+        color: #ff6060;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    &__location {
+        font-size: 18px;
+        color: #ff6060;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    &__host {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-right: 10px;
+    }
+
+    &__firstName,
+    &__lastName {
+        font-size: 18px;
+        color: #ff6060;
+        font-weight: 500;
+        text-align: right;
+        margin: 0;
+    }
+
+    &__picture {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+    }
 }

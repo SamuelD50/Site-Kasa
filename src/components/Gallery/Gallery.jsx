@@ -1,9 +1,9 @@
-import { useParams} from 'react-router-dom';
 import { useState } from 'react';
 import chevronNext from '../../assets/chevron-right-solid.svg';
 import chevronPrevious from '../../assets/chevron-left-solid.svg';
-
 import './Gallery.scss'
+
+/* This component is used to create the carousel in hosting page. */
 
 function Gallery({ pictures, description }) {
 
@@ -21,18 +21,16 @@ function Gallery({ pictures, description }) {
 
 
   return (
-    <div className='gallery__globalContainer'>
-      <div className='gallery__container'>
-        <img src={pictures[currentPicture]} alt={description} className='gallery__image' />
-      </div>
+    <div className='gallery'>
+      <img src={pictures[currentPicture]} alt={description} className='gallery__image' />
             
       {showControls && (
         <>
-          <button onClick={handlePreviousPicture}>
-            <img src={chevronPrevious} alt='Précédent' className='chevron__previous' />
+          <button onClick={handlePreviousPicture} className='gallery__chevronPrevious'>
+            <img src={chevronPrevious} alt='Précédent'  />
           </button>
-          <button onClick={handleNextPicture}>
-            <img src={chevronNext} alt='Suivant' className='chevron__next' />
+          <button onClick={handleNextPicture} className='gallery__chevronNext'>
+            <img src={chevronNext} alt='Suivant' />
           </button>
           <span className='gallery__counter'>
             {currentPicture + 1} / {pictures.length}

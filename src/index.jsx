@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './index.scss'
 import Home from '../src/pages/Home/Home'
@@ -7,8 +8,10 @@ import Hosting from './pages/Hosting/Hosting'
 import About from './pages/About/About'
 import Error from './pages/Error/Error'
 
+const container = document.getElementById('root')
+const root = createRoot(container)
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <Router>
       <Routes>
@@ -18,6 +21,5 @@ ReactDOM.render(
         <Route path='/*' element={<Error />} />
       </Routes>
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 )

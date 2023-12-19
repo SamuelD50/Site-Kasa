@@ -4,12 +4,12 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 
-const HomeLogo = styled.img`
+const NavBar__logotype = styled.img`
     width: auto;
     height: 68px;
 `
 
-const NavContainer = styled.nav`
+const NavBar = styled.nav`
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -17,27 +17,31 @@ const NavContainer = styled.nav`
     align-items: center;
 `
 
+
+
+/* This component is used to create the navigation bar at the top of the screen. */
+
 function Navbar() {
     return (
-        <NavContainer>
+        <NavBar>
             <NavLink to="/">
-                <HomeLogo src={headerLogotype} className='navbar__logotype' alt='Logotype Kasa'/>
+                <NavBar__logotype src={headerLogotype} alt='Logotype Kasa'/>
             </NavLink>
             <nav>
                 <ul className='navbar__list'>
                     <li>
-                        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/'>
+                        <NavLink className={({ isActive }) => (isActive ? 'active' : 'a')} to='/'>
                             Accueil
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/about'>
+                        <NavLink className={({ isActive }) => (isActive ? 'active' : 'a')} to='/about'>
                             A propos
                         </NavLink>
                     </li>
                 </ul>
             </nav>
-        </NavContainer>
+        </NavBar>
     )
 }
 
