@@ -5,6 +5,8 @@
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
 
     &::before {
         content: "";
@@ -32,6 +34,4 @@
         left: 20px;
         z-index: 2;
     }
-
-
 }

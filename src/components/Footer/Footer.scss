@@ -12,9 +12,22 @@
         color: white;
         font-weight: 500;
         font-size: 24px;
+
+        @media (max-width: 890px) {
+            font-size: 12px;
+        }
     }
 
     &__logotype {
         width: 122px
+    }
+
+    &__mobileOnly {
+        display: none;
+        
+        @media (max-width: 890px) {
+            display: block;
+        }
+        
     }
 }

@@ -8,7 +8,7 @@ function Footer() {
         <div className='footer'>
             <img src={footerLogotype} alt='Logotype Kasa' className='footer__logotype'/>
             <span className='footer__copyright'>
-                © 2020 Kasa. All rights reserved
+                © 2020 Kasa. All <br className='footer__mobileOnly'/>rights reserved
             </span>
         </div>
     )

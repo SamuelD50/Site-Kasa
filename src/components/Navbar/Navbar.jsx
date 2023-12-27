@@ -7,6 +7,11 @@ import styled from 'styled-components';
 const NavBar__logotype = styled.img`
     width: auto;
     height: 68px;
+
+    @media (max-width: 890px) {
+        width: 145px;
+        height: auto;
+    }
 `
 
 const NavBar = styled.nav`

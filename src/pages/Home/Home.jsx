@@ -28,7 +28,7 @@ function Home() {
             })
     }, [])
 
-    const title = "Chez vous, partout et ailleurs"
+    /* const title = 'Chez vous, partout et ailleurs'; */
 
     return (
         <div className='home'>
@@ -38,7 +38,6 @@ function Home() {
             <main className='home__main'>
                 <Banner 
                     image={bannerImage}
-                    title={title}
                 />
                 {loading ? (
                     <Loading />

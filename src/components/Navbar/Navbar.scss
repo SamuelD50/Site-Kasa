@@ -6,6 +6,12 @@
     gap: 60px;
     font-size: 24px;
 
+    @media (max-width: 890px) {
+        font-size: 12px;
+        text-transform: uppercase;
+        gap: 26px;
+    }
+
     & li a {
         text-decoration: none;
         color: #FF6060;

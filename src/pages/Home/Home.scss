@@ -26,3 +26,55 @@
 .loader {
     margin: 20px 20px;
 }
+
+@media (max-width: 1420px) {
+    .home {
+        &__header,
+        &__main {
+            margin: 30px 60px 30px 60px;
+        }
+
+        &__list {
+            gap: 20px;
+            justify-content: center;
+        } 
+    }
+} 
+
+
+
+@media (max-width: 1280px) {
+    .home {
+        &__header,
+        &__main {
+            margin: 20px 20px 20px 20px;
+        }
+
+        &__main {
+            gap: 20px;
+        }
+    }
+    .card {
+        width: 335px;
+        height: 255px;
+    }
+}
+
+@media (max-width: 1185px) {
+    .card {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 890px) {
+    .home {
+        &__list {
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+
+    .card {
+        width: 90vw;
+    }
+}
