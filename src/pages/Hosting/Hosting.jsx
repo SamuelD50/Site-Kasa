@@ -41,7 +41,7 @@ function Hosting() {
 
     if (!hostings) {
         navigate('/404')
-        return null
+        return null;
     }
 
     return (
@@ -58,41 +58,55 @@ function Hosting() {
                             pictures={hostings.pictures}
                             description={hostings.description}
                         />
-                        <Host
-                            cardTitle={hostings.title}
-                            location={hostings.location}
-                            hostFirstName={hostings.host.name.split(' ')[0]}
-                            hostLastName={hostings.host.name.split(' ')[1]}
-                            hostPicture={hostings.host.picture}
-                        />
-                        <div className='hosting__tagsAndRating'>
-                            <Tags
-                                tagsKeyword={hostings.tags.map((tag, id) => (
-                                    <li key={id} className='hosting__tags'>
-                                        {tag}
-                                    </li>
-                                ))}
-                            />
-                            <Rating 
-                                rating={hostings.rating}
-                            />
+                        <div className='hosting__titleTagsRateHostAndCollapses'>
+                            <div className='hosting__titleTagsHostAndRating'>
+                                <div className='hosting__titleAndTags'>
+                                    <div className='hosting__titleGroup'>
+                                        <h1 className='hosting__title'>
+                                            {hostings.title}
+                                        </h1>
+                                        <h2 className='hosting__location'>
+                                            {hostings.location}
+                                        </h2>
+                                    </div>
+                                    <Tags
+                                        tagsKeyword={hostings.tags.map((tag, id) => (
+                                            <li key={id} className='hosting__tags'>
+                                                {tag}
+                                            </li>
+                                        ))}
+                                    />
+                                </div>
+                                <div className='hosting__hostAndRating'>
+                                    <Host
+                                        hostFirstName={hostings.host.name.split(' ')[0]}
+                                        hostLastName={hostings.host.name.split(' ')[1]}
+                                        hostPicture={hostings.host.picture}
+                                    />
+                                    <Rating 
+                                        rating={hostings.rating}
+                                    />
+                                </div>
+                            </div>
+                            <div className='hosting__collapses'>
+                                <Collapse
+                                    collapseTitle={"Description"}
+                                    collapseContent={hostings.description}
+                                />
+                                <Collapse
+                                    collapseTitle={"Equipements"}
+                                    collapseContent={
+                                        hostings.equipments.map((equipment, id) => (
+                                            <li key={id}>
+                                                {equipment}
+                                            </li>
+                                        ))
+                                    }
+                                />
+                            </div>
                         </div>
-                        <div className='hosting__collapses'>
-                            <Collapse
-                                collapseTitle={"Description"}
-                                collapseContent={hostings.description}
-                            />
-                            <Collapse
-                                collapseTitle={"Equipements"}
-                                collapseContent={
-                                    hostings.equipments.map((equipment, id) => (
-                                        <li key={id}>
-                                            {equipment}
-                                        </li>
-                                    ))
-                                }
-                            />
-                        </div>
+                        
+
                     </div>
                 )}
             </main>

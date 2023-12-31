@@ -5,20 +5,35 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 195px;
-    height: 35px;
+    width: 196px;
+    height: 36px;
     margin: 0;
     padding: 0;
     list-style-type: none;
+
+        @media (max-width: 890px) {
+            width: 98px;
+            height: 18px;
+        }
     }
 
-    &__star {
+    &__star img {
         width: 25px;
         height: auto;
+
+        @media (max-width: 890px) {
+            width: auto;
+            height: 13px;
+        }
     }
 }
 
-.unrating__star {
+.unrating__star img {
     width: 25px;
     height: auto;
+
+    @media (max-width: 890px) {
+        width: auto;
+        height: 13px;
+    }
 }

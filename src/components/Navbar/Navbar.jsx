@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 
-const NavBar__logotype = styled.img`
+const NavBarLogotype = styled.img`
     width: auto;
     height: 68px;
 
@@ -16,10 +16,19 @@ const NavBar__logotype = styled.img`
 
 const NavBar = styled.nav`
     width: 100%;
+    height: 68px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 1280) {
+        height: 58px;
+    }
+
+    @media (max-width: 890px) {
+        height: 46.88px;
+    }
 `
 
 
@@ -30,7 +39,7 @@ function Navbar() {
     return (
         <NavBar>
             <NavLink to="/">
-                <NavBar__logotype src={headerLogotype} alt='Logotype Kasa'/>
+                <NavBarLogotype src={headerLogotype} alt='Logotype Kasa'/>
             </NavLink>
             <nav>
                 <ul className='navbar__list'>
@@ -41,7 +50,7 @@ function Navbar() {
                     </li>
                     <li>
                         <NavLink className={({ isActive }) => (isActive ? 'active' : 'a')} to='/about'>
-                            A propos
+                            A Propos
                         </NavLink>
                     </li>
                 </ul>

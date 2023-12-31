@@ -1,27 +1,95 @@
 .about {
-    &__header,
-    &__main {
-        margin: 40px 100px 40px 100px;
+    &__header {
+        margin: 40px 100px 38px 100px;
+
+        @media (max-width: 1420px) {
+            margin: 20px 60px 28px 60px;
+        }
+
+        @media (max-width: 1280px) {
+            margin: 20px 20px 19px 20px;
+        }
+
     }
 
     &__main {
-        .collapse {
+        margin: 38px 100px 38px 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+
+        @media (max-width: 1420px) {
+            margin: 30px 60px 28px 60px;
+        }
+
+        @media (max-width: 1280px) {
+            margin: 19px 20px 19px 20px;
+            gap: 19px;
+        }
+
+        .collapses {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 30px;
+            gap: 30px;
 
-            &__heading {
-                width: 80%;
-                height: 52px;
-                border-radius: 5px;
-                padding: 10px 20px 10px 15px;
+            @media (max-width: 890px) {
+                gap: 20px;
             }
 
-            &__hiddenContent {
-                width: 80%;
-                border-radius: 0 0 5px 5px;
+            .collapse {
+                &__heading {
+                    width: 1023px;
+                    height: 52px;
+                    border-radius: 5px;
+                    padding: 10px 20px 10px 15px;
+    
+                    @media (max-width: 1280px) {
+                        width: 80vw;
+                        height: 30px;
+                    }
+    
+                    @media (max-width: 890px) {
+                        width: 89.5vw;
+                        height: 30px;
+                        padding: 10px 10px 10px 10px;
+                    }
+    
+                    @media (max-width: 400px) {
+                        width: 335px;
+                    }
+                }
+    
+                &__title {
+                    font-size: 24px;
+    
+                    @media (max-width: 1280px) {
+                        font-size: 16px;
+                    }
+    
+                    @media (max-width: 890px) {
+                        font-size: 13px;
+                    }
+                }
+    
+                &__hiddenContent {
+                    width: 1023px;
+                    border-radius: 0 0 5px 5px;
+    
+                    @media (max-width: 1280px) {
+                        width: 80vw;
+                    }
+    
+                    @media (max-width: 890px) {
+                        width: 89.5vw;
+                        font-size: 13px;
+                    }
+    
+                    @media (max-width: 400px) {
+                        width: 335px;
+                    }
+                }
             }
         }
         
@@ -31,6 +99,3 @@
         display: none;
     }
 }
-
-
-

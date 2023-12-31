@@ -1,9 +1,10 @@
 .tags__list {
-    width: 50%;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 }

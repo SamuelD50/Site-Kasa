@@ -29,22 +29,24 @@ function About() {
                 <Banner
                     image={bannerImage}
                 />
-                <Collapse 
-                    collapseTitle={reliabilityTitle}
-                    collapseContent={reliabilityContent}
-                />
-                <Collapse
-                    collapseTitle={respectTitle}
-                    collapseContent={respectContent}
-                />
-                <Collapse
-                    collapseTitle={serviceTitle}
-                    collapseContent={serviceContent}
-                />
-                <Collapse
-                    collapseTitle={securityTitle}
-                    collapseContent={securityContent}
-                />
+                <div className='collapses'>
+                    <Collapse 
+                        collapseTitle={reliabilityTitle}
+                        collapseContent={reliabilityContent}
+                    />
+                    <Collapse
+                        collapseTitle={respectTitle}
+                        collapseContent={respectContent}
+                    />
+                    <Collapse
+                        collapseTitle={serviceTitle}
+                        collapseContent={serviceContent}
+                    />
+                    <Collapse
+                        collapseTitle={securityTitle}
+                        collapseContent={securityContent}
+                    />
+                </div>
             </main>
             <footer className='about__footer'>
                 <Footer/>

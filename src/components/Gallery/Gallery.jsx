@@ -33,7 +33,7 @@ function Gallery({ pictures, description }) {
             <img src={chevronNext} alt='Suivant' />
           </button>
           <span className='gallery__counter'>
-            {currentPicture + 1} / {pictures.length}
+            {currentPicture + 1}/{pictures.length}
           </span>
         </>
       )}
