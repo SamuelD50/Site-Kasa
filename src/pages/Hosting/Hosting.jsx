@@ -33,6 +33,16 @@ function Hosting() {
             })
     }, [])
 
+    useEffect(() => {
+        if (!loading) {
+            const hostings = data.find((hosting) => hosting.id === id)
+
+            if (!hostings) {
+                navigate('/404')
+            }
+        }
+    }, [id, loading, data, navigate])
+
     if (loading) {
         return <Loading />
     }
@@ -40,7 +50,6 @@ function Hosting() {
     const hostings = data.find((hosting) => hosting.id === id)
 
     if (!hostings) {
-        navigate('/404')
         return null;
     }
 
