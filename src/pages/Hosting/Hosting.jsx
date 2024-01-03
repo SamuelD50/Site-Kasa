@@ -38,7 +38,7 @@ function Hosting() {
             const hostings = data.find((hosting) => hosting.id === id)
 
             if (!hostings) {
-                navigate('/404')
+                navigate('/*')
             }
         }
     }, [id, loading, data, navigate])
