@@ -1,10 +1,15 @@
 .home {
     &__header {
         margin: 45px 100px 50px 100px;
+        max-width: 1240px;
+
+        @media (min-width: 1440px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         @media (max-width: 1420px) {
-            max-width: 1240px;
-            margin: 32px 60px 38px 60px;
+            margin: 32px auto 38px auto;
         }
 
         @media (max-width: 1280px) {
@@ -15,13 +20,18 @@
 
     &__main {
         margin: 50px 100px 50px 100px;
+        max-width: 1240px;
         display: flex;
         flex-direction: column;
         gap: 42px;
 
+        @media (min-width: 1440px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         @media (max-width: 1420px) {
-            max-width: 1240px;
-            margin: 38px 60px 35px 60px;
+            margin: 38px auto 35px auto;
         }
 
         @media (max-width: 1280px) {
@@ -71,18 +81,10 @@
         }
     }
 
-    &__header,
-    &__main {
-        @media (min-width: 1440px) {
-            max-width: 1240px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
     &__footer {
+        max-width: 1440px;
+
         @media (min-width: 1440px) {
-            max-width: 1440px;
             margin-left: auto;
             margin-right: auto;
         }
